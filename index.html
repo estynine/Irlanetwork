@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>IRLA - Networking | Comunidade Premium</title>
+    <meta name="description" content="Acesse a maior network de marketing digital. Ninguém solta a mão de ninguém." />
+    <meta name="theme-color" content="#050E17" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'deep-metal': '#050E17',
+              'navy-metal': '#0A1B2A',
+              'silver-light': '#E2E8F0',
+              'silver-metallic': '#C0C7D1',
+              'gold-premium': '#F59E0B',
+              'gold-light': '#FCD34D',
+              'neon-green': '#39FF14',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Orbitron', 'sans-serif'],
+              tech: ['Rajdhani', 'sans-serif'],
+            },
+            animation: {
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'bounce-slow': 'bounce 3s infinite',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      html {
+        background-color: #050E17;
+        overscroll-behavior: none; /* Prevents bounce effect on whole page */
+        touch-action: pan-x pan-y; /* Allow scroll in both directions but DISABLE pinch-zoom */
+        -webkit-text-size-adjust: 100%; /* Prevents font inflation on rotation */
+        -webkit-user-select: none; /* Safari */
+        -ms-user-select: none; /* IE 10 and IE 11 */
+        user-select: none; /* Standard syntax */
+      }
+      body {
+        background-color: #050E17;
+        color: #C0C7D1;
+        overflow-x: hidden;
+        overscroll-behavior: none; /* Prevents bounce effect */
+        margin: 0;
+        touch-action: pan-x pan-y; /* Reinforce restriction */
+        -webkit-font-smoothing: antialiased;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #050E17; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #1e293b; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #334155; 
+      }
+      
+      /* Hide scrollbar for carousel but keep functionality */
+      .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+      }
+      .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+
+      .metallic-text {
+        background: linear-gradient(to bottom, #FFFFFF, #C0C7D1, #94A3B8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.5));
+      }
+      .glass-panel {
+        background: rgba(10, 27, 42, 0.7);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(192, 199, 209, 0.1);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+      }
+      .btn-shine {
+        position: relative;
+        overflow: hidden;
+      }
+      .btn-shine::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+        transform: skewX(-25deg);
+        animation: shine 3s infinite;
+      }
+      @keyframes shine {
+        100% {
+          left: 200%;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/"
+  }
+}
+</script>
+<script>
+  // --- SECURITY & ANTI-DEBUGGING ---
+  
+  // Disable Right Click
+  document.addEventListener('contextmenu', event => event.preventDefault());
+
+  // Disable Developer Tools shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (
+      e.key === 'F12' || 
+      (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+      (e.ctrlKey && e.shiftKey && e.key === 'J') || 
+      (e.ctrlKey && e.key === 'u')
+    ) {
+      e.preventDefault();
+    }
+  });
+
+  // --- AGGRESSIVE ZOOM PREVENTION (MOBILE) ---
+
+  // 1. Prevent Multi-touch Start (The most effective way to kill pinch-zoom)
+  // If more than 1 finger touches the screen, block it.
+  document.addEventListener('touchstart', function(event) {
+    if (event.touches.length > 1) {
+      event.preventDefault();
+    }
+  }, { passive: false });
+
+  // 2. Prevent Touch Move if scaling is happening
+  document.addEventListener('touchmove', function(event) {
+    if (event.scale && event.scale !== 1) {
+      event.preventDefault();
+    }
+  }, { passive: false });
+
+  // 3. Prevent Safari Gesture Events
+  document.addEventListener('gesturestart', function(e) { e.preventDefault(); });
+  document.addEventListener('gesturechange', function(e) { e.preventDefault(); });
+  document.addEventListener('gestureend', function(e) { e.preventDefault(); });
+
+  // 4. Disable double-tap to zoom
+  let lastTouchEnd = 0;
+  document.addEventListener('touchend', function (event) {
+    const now = (new Date()).getTime();
+    if (now - lastTouchEnd <= 300) {
+      event.preventDefault();
+    }
+    lastTouchEnd = now;
+  }, false);
+  
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
